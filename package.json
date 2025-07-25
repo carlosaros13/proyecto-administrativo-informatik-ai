@@ -1,0 +1,30 @@
+{
+  "name": "informatik-ai-hub-interno",
+  "version": "1.0.0",
+  "description": "Aplicación web administrativa interna para organizar flujos de trabajo de Informatik-AI",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm run dev",
+    "build": "cd client && npm run build",
+    "start": "cd server && npm start",
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install",
+    "init-db": "cd server && npm run init-db",
+    "migrate": "cd server && node scripts/migrateData.js",
+    "reset-db": "cd server && del database\\informatik_ai_hub.db && npm run init-db && npm run migrate",
+    "dev-windows": "start-dev.bat"
+  },
+  "keywords": [
+    "informatik-ai",
+    "dashboard",
+    "admin",
+    "react",
+    "nodejs"
+  ],
+  "author": "Informatik-AI Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
